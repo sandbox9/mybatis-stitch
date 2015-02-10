@@ -1,6 +1,8 @@
-package kr.sadalmelik.mybatis.helper;
+package kr.sadalmelik.mybatis.stitch.ui;
 
 import java.util.Map;
+
+import kr.sadalmelik.mybatis.stitch.util.CheetahXMLParser;
 
 import org.apache.ibatis.mapping.SqlSource;
 import org.eclipse.jface.text.Document;
@@ -17,8 +19,6 @@ import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.part.ViewPart;
-
-import test3.views.ViewLabelProvider;
 
 /**
  * Created by SejongPark on 15. 2. 6..

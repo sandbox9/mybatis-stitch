@@ -1,4 +1,4 @@
-package kr.sadalmelik.mybatis.helper;
+package kr.sadalmelik.mybatis.stitch.util;
 
 import java.io.StringReader;
 import java.util.HashMap;

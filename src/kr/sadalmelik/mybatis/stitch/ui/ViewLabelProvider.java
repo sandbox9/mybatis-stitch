@@ -1,4 +1,4 @@
-package test3.views;
+package kr.sadalmelik.mybatis.stitch.ui;
 
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;

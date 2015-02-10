@@ -1,4 +1,4 @@
-package kr.sadalmelik.mybatis.helper;
+package kr.sadalmelik.mybatis.stitch.ui;
 
 import java.util.Map;
 
