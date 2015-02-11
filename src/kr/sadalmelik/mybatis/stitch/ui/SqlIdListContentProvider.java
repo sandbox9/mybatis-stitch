@@ -8,7 +8,7 @@ import org.eclipse.jface.viewers.Viewer;
 
 public class SqlIdListContentProvider implements IStructuredContentProvider {
 	private Map<String, SqlSource> sqlSourceMap;
-	
+
 	public SqlIdListContentProvider(Map<String, SqlSource> sqlSourceMap) {
 		super();
 		this.sqlSourceMap = sqlSourceMap;
@@ -21,12 +21,12 @@ public class SqlIdListContentProvider implements IStructuredContentProvider {
 	}
 
 	public Object[] getElements(Object parent) {
-		if(sqlSourceMap == null){
-			return new String[]{};
-		}else{
-			return sqlSourceMap.keySet().toArray();	
+		if (sqlSourceMap == null) {
+			return new String[] {};
+		} else {
+			return sqlSourceMap.keySet().toArray();
 		}
-		
+
 	}
-	
+
 }

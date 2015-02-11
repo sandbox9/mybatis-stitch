@@ -10,10 +10,10 @@
       </category>
       <view
             category="Mybatis-helper"
-            class="kr.sadalmelik.mybatis.helper.MybatisHelperView"
+            class="kr.sadalmelik.mybatis.stitch.ui.MybatisHelperView"
             icon="icons/sample.gif"
             id="kr.sadalmelik.mybatis.helper.MybatisHelperView"
-            name="Sample View">
+            name="MybatisHelper">
       </view>
    </extension>
    <extension
