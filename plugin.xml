@@ -5,14 +5,14 @@
    <extension
          point="org.eclipse.ui.views">
       <category
-            id="Mybatis-helper"
-            name="Mybatis helper">
+            id="Mybatis-Stitch"
+            name="Mybatis Stitch">
       </category>
       <view
-            category="Mybatis-helper"
-            class="kr.sadalmelik.mybatis.stitch.ui.MybatisHelperView"
+            category="Mybatis-Stitch"
+            class="sandbox9.mybatis.stitch.view.ui.MybatisStitchView"
             icon="icons/sample.gif"
-            id="kr.sadalmelik.mybatis.helper.MybatisHelperView"
+            id="sandbox9.mybatis.stitch.view.ui.MybatisStitchView"
             name="MybatisHelper">
       </view>
    </extension>
@@ -33,6 +33,17 @@
       <contexts
             file="contexts.xml">
       </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            class="sandbox9.mybatis.stitch.preference.StitchPropertyPage"
+            id="sandbox9.mybatis.stitch.preference.StitchPropertyPage"
+            name="MybatisStitch">
+         <enabledWhen>
+            <instanceof value="org.eclipse.jdt.core.IJavaProject" />
+         </enabledWhen>
+      </page>
    </extension>
 
 </plugin>

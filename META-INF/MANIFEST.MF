@@ -3,10 +3,13 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Test3
 Bundle-SymbolicName: MybatisStitch;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: kr.sadalmelik.mybatis.stitch.Activator
+Bundle-Activator: sandbox9.mybatis.stitch.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.jface.text;bundle-version="3.9.1"
+ org.eclipse.jface.text;bundle-version="3.9.1",
+ org.eclipse.core.resources;bundle-version="3.9.1",
+ org.eclipse.jdt.core;bundle-version="3.10.0",
+ org.eclipse.wst.sse.core;bundle-version="1.1.900"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
@@ -43,10 +46,6 @@ Export-Package: com.fasterxml.jackson.annotation,
  com.fasterxml.jackson.databind.ser.std,
  com.fasterxml.jackson.databind.type,
  com.fasterxml.jackson.databind.util,
- kr,
- kr.sadalmelik.mybatis.stitch,
- kr.sadalmelik.mybatis.stitch.ui,
- kr.sadalmelik.mybatis.stitch.util,
  org.apache.ibatis.annotations,
  org.apache.ibatis.binding,
  org.apache.ibatis.builder,
@@ -97,4 +96,7 @@ Export-Package: com.fasterxml.jackson.annotation,
  org.apache.ibatis.transaction,
  org.apache.ibatis.transaction.jdbc,
  org.apache.ibatis.transaction.managed,
- org.apache.ibatis.type
+ org.apache.ibatis.type,
+ sandbox9.mybatis.stitch,
+ sandbox9.mybatis.stitch.view.ui,
+ sandbox9.mybatis.stitch.view.util

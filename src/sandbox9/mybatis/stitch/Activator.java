@@ -1,4 +1,4 @@
-package kr.sadalmelik.mybatis.stitch;
+package sandbox9.mybatis.stitch;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;

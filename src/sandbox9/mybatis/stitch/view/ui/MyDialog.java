@@ -1,4 +1,4 @@
-package kr.sadalmelik.mybatis.stitch.ui;
+package sandbox9.mybatis.stitch.view.ui;
 
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.text.Document;

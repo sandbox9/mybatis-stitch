@@ -1,4 +1,4 @@
-package kr.sadalmelik.mybatis.stitch.util;
+package sandbox9.mybatis.stitch.view.util;
 
 import java.io.StringReader;
 import java.util.HashMap;
