@@ -2,6 +2,15 @@
 <?eclipse version="3.4"?>
 <plugin>
 
+   <extension point="org.eclipse.ui.propertyPages">
+      <page class="sandbox9.mybatis.stitch.preference.StitchPropertyPage"
+            id="sandbox9.mybatis.stitch.preference.StitchPropertyPage"
+            name="MybatisStitch ">
+         <enabledWhen>
+            <instanceof value="org.eclipse.jdt.core.IJavaProject" />
+         </enabledWhen>
+      </page>
+   </extension>
    <extension
          point="org.eclipse.ui.views">
       <category
@@ -10,9 +19,9 @@
       </category>
       <view
             category="Mybatis-Stitch"
-            class="sandbox9.mybatis.stitch.view.ui.MybatisStitchView"
+            class="sandbox9.mybatis.stitch.view.ui.StitchView"
             icon="icons/sample.gif"
-            id="sandbox9.mybatis.stitch.view.ui.MybatisStitchView"
+            id="sandbox9.mybatis.stitch.view.ui.StitchView"
             name="MybatisHelper">
       </view>
    </extension>
@@ -34,16 +43,4 @@
             file="contexts.xml">
       </contexts>
    </extension>
-   <extension
-         point="org.eclipse.ui.propertyPages">
-      <page
-            class="sandbox9.mybatis.stitch.preference.StitchPropertyPage"
-            id="sandbox9.mybatis.stitch.preference.StitchPropertyPage"
-            name="MybatisStitch">
-         <enabledWhen>
-            <instanceof value="org.eclipse.jdt.core.IJavaProject" />
-         </enabledWhen>
-      </page>
-   </extension>
-
 </plugin>

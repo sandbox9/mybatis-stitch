@@ -1,22 +1,13 @@
 package sandbox9.mybatis.stitch.view.ui;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.SqlSource;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IPackageFragmentRoot;
-import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.TextViewer;
@@ -30,13 +21,13 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.part.ViewPart;
-import org.eclipse.wst.sse.core.StructuredModelManager;
 
 import sandbox9.mybatis.stitch.Activator;
 import sandbox9.mybatis.stitch.view.util.CheetahXMLParser;
@@ -47,9 +38,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * Created by SejongPark on 15. 2. 6..
  */
 public class StitchView extends ViewPart {
-
-	public static final String ID = "sandbox9.mybatis.stitch.view.ui.MybatisHelperView";
-
 	private TableViewer sqlIdListViewer;
 
 	private TextViewer paramterTextViewer;
@@ -93,12 +81,15 @@ public class StitchView extends ViewPart {
 	}
 
 	private void createActionBar() {
-		MybatisBindAction lCustomAction = new MybatisBindAction();
-		lCustomAction.setText("Start");
-		// FIXME icon 설정안되는 이유 찾기
-		lCustomAction.setImageDescriptor(Activator
-				.getImageDescriptor("icons/run.gif"));
-		getViewSite().getActionBars().getToolBarManager().add(lCustomAction);
+		Action customAction = new MybatisBindAction();
+
+		IActionBars actionBars = getViewSite().getActionBars();
+		IToolBarManager toolBar = actionBars.getToolBarManager();
+		toolBar.add(new MybatisBindAction());
+		customAction.setText("Start");
+		customAction.setImageDescriptor(Activator.getImageDescriptor("/icons/run.gif"));
+
+		//getViewSite().getActionBars().getToolBarManager().add(lCustomAction);
 	}
 
 	private void createAction() {
@@ -154,11 +145,15 @@ public class StitchView extends ViewPart {
 			// 쓰레드를 실행시킵니다.
 			Display.getDefault().asyncExec(new Runnable() {
 				public void run() {
-					IDocument xmlDocument = (IDocument) part.getAdapter(IDocument.class);
+					IDocument xmlDocument = (IDocument) part
+							.getAdapter(IDocument.class);
 					xmlString = xmlDocument.get();
-					sqlSourceMap = cheetahXMLParser.generateCrudSqlSourceMap(xmlString);
+					sqlSourceMap = cheetahXMLParser
+							.generateCrudSqlSourceMap(xmlString);
 
-					sqlIdListViewer.setContentProvider(new SqlIdListContentProvider(sqlSourceMap));
+					sqlIdListViewer
+							.setContentProvider(new SqlIdListContentProvider(
+									sqlSourceMap));
 					sqlIdListViewer.refresh();
 				}
 			});
@@ -181,7 +176,7 @@ public class StitchView extends ViewPart {
 
 			String sql = generateSql();
 			Shell activeShell = getActiveShell();
-			new MyDialog(activeShell, sql).open();
+			new QueryResultDialog(activeShell, sql).open();
 		}
 
 		private Shell getActiveShell() {

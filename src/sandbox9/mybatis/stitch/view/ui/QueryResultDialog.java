@@ -10,11 +10,11 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 
-public class MyDialog extends Dialog {
+public class QueryResultDialog extends Dialog {
 
 	private String sql;
 	
-	public MyDialog(Shell parentShell, String sql) {
+	public QueryResultDialog(Shell parentShell, String sql) {
 		super(parentShell);
 		this.sql = sql;
 	}
