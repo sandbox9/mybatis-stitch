@@ -17,6 +17,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 
+import sandbox9.mybatis.stitch.StitchXmlParseException;
+
 //xml을 Map<key, SqlSource>로 변환합니다.
 public class CheetahXMLParser {
 
@@ -104,9 +106,8 @@ public class CheetahXMLParser {
 			Document doc = builder.parse(new InputSource(new StringReader(xmlStr)));
 			return doc;
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new StitchXmlParseException(e.getMessage());
 		}
-		return null;
 	}
 
 }

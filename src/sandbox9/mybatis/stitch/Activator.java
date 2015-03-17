@@ -1,7 +1,12 @@
 package sandbox9.mybatis.stitch;
 
+
+import org.eclipse.core.resources.ProjectScope;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.ui.preferences.ScopedPreferenceStore;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -57,5 +62,14 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {
 		return imageDescriptorFromPlugin(PLUGIN_ID, path);
+	}
+	
+	public static IPreferenceStore getPreferenceStore(final IJavaProject project) {
+		ScopedPreferenceStore store = null;
+		if (project != null) {
+			store = new ScopedPreferenceStore(new ProjectScope(project.getProject()), PLUGIN_ID);
+		}
+		
+		return store;
 	}
 }

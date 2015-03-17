@@ -6,8 +6,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
 
-public class ViewLabelProvider extends LabelProvider implements
-		ITableLabelProvider {
+public class ViewLabelProvider extends LabelProvider implements ITableLabelProvider {
 	public String getColumnText(Object obj, int index) {
 		return getText(obj);
 	}

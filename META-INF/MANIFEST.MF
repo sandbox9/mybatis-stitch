@@ -6,17 +6,19 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: sandbox9.mybatis.stitch.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.jface.text;bundle-version="3.9.1",
- org.eclipse.wst.sse.core;bundle-version="1.1.900",
- org.eclipse.core.resources;bundle-version="3.9.1",
- org.eclipse.jdt.core;bundle-version="3.10.0"
+ org.eclipse.jface.text,
+ org.eclipse.core.resources,
+ org.eclipse.jdt.core,
+ org.eclipse.wst.sse.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
  lib/jackson-annotations-2.5.1.jar,
  lib/jackson-core-2.5.1.jar,
  lib/jackson-databind-2.5.1.jar,
- lib/mybatis-3.2.8.jar
+ lib/mybatis-3.2.8.jar,
+ lib/mysql-connector-java-5.1.34.jar,
+ lib/ojdbc14-10.2.0.4.0.jar
 Export-Package: com.fasterxml.jackson.annotation,
  com.fasterxml.jackson.core,
  com.fasterxml.jackson.core.base,
